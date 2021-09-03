@@ -357,7 +357,7 @@ func (c *URL) GetCacheInvokerMapKey() string {
 // ServiceKey gets a unique key of a service.
 func (c *URL) ServiceKey() string {
 	return ServiceKey(c.GetParam(constant.INTERFACE_KEY, strings.TrimPrefix(c.Path, "/")),
-		c.GetParam(constant.GROUP_KEY, ""), c.GetParam(constant.VERSION_KEY, ""))
+		c.GetParam(constant.GROUP_KEY, ""), c.GetParam(constant.VERSION_KEY, c.GetParam("default.version","")))
 }
 
 func ServiceKey(intf string, group string, version string) string {

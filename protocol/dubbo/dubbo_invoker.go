@@ -120,7 +120,7 @@ func (di *DubboInvoker) Invoke(ctx context.Context, invocation protocol.Invocati
 
 	inv := invocation.(*invocation_impl.RPCInvocation)
 	// init param
-	inv.SetAttachments(constant.PATH_KEY, di.GetURL().GetParam(constant.INTERFACE_KEY, ""))
+	inv.SetAttachments(constant.PATH_KEY,inv.SetAttachments(constant.PATH_KEY, di.GetUrl().Path[1:]))
 	for _, k := range attachmentKey {
 		if v := di.GetURL().GetParam(k, ""); len(v) > 0 {
 			inv.SetAttachments(k, v)
