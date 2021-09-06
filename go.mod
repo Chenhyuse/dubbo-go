@@ -1,4 +1,4 @@
-module github.com/apache/dubbo-go
+module github.com/Chenhyuse/dubbo-go
 
 go 1.15
 
